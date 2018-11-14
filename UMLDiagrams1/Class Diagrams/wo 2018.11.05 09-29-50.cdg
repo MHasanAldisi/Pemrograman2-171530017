@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="wo">
+  <ClassDiagramComponents>
+    <Class name="admin" package="wo" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_admin" type="String" visibility="package"/>
+        <Field name="nm_admin" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="dekorasi" package="wo" visibility="public" xPosition="20.0" yPosition="255.0">
+      <Fields>
+        <Field name="id_dekorasi" type="String" visibility="package"/>
+        <Field name="nm_dekorasi" type="String" visibility="package"/>
+        <Field name="vendor" type="vendor" visibility="package"/>
+        <Field name="harga" type="harga" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="harga" package="wo" visibility="public" xPosition="346.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_harga" type="String" visibility="package"/>
+        <Field name="harga" type="float" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="hiburan" package="wo" visibility="public" xPosition="682.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_hiburan" type="String" visibility="package"/>
+        <Field name="nm_hiburan" type="String" visibility="package"/>
+        <Field name="vendor" type="vendor" visibility="package"/>
+        <Field name="harga" type="harga" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="kategori" package="wo" visibility="public" xPosition="993.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_kategori" type="String" visibility="package"/>
+        <Field name="nm_kategori" type="String" visibility="package"/>
+        <Field name="rias" type="rias" visibility="package"/>
+        <Field name="hiburan" type="hiburan" visibility="package"/>
+        <Field name="dekorasi" type="dekorasi" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="rias" package="wo" visibility="public" xPosition="682.0" yPosition="384.0">
+      <Fields>
+        <Field name="id_rias" type="String" visibility="package"/>
+        <Field name="nm_rias" type="String" visibility="package"/>
+        <Field name="vendor" type="vendor" visibility="package"/>
+        <Field name="harga" type="harga" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="tanggal" package="wo" visibility="public" xPosition="993.0" yPosition="384.0">
+      <Fields>
+        <Field name="tanggal" type="String" visibility="package"/>
+        <Field name="id_kategori" type="String" visibility="package"/>
+        <Field name="kategori" type="kategori" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="vendor" package="wo" visibility="public" xPosition="346.0" yPosition="384.0">
+      <Fields>
+        <Field name="id_vendor" type="String" visibility="package"/>
+        <Field name="nm_vendor" type="String" visibility="package"/>
+        <Field name="keahlian" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="rias" source="wo.kategori" target="wo.rias" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="hiburan" source="wo.kategori" target="wo.hiburan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="kategori" source="wo.tanggal" target="wo.kategori" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="harga" source="wo.rias" target="wo.harga" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vendor" source="wo.hiburan" target="wo.vendor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="harga" source="wo.hiburan" target="wo.harga" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vendor" source="wo.dekorasi" target="wo.vendor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vendor" source="wo.rias" target="wo.vendor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dekorasi" source="wo.kategori" target="wo.dekorasi" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="harga" source="wo.dekorasi" target="wo.harga" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
